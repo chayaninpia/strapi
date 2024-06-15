@@ -1,6 +1,7 @@
 import knex from 'knex';
 import type { Knex } from 'knex';
 import SqliteClient from 'knex/lib/dialects/sqlite3/index';
+import { BigQueryClient } from 'knex-bigquery';
 
 class LegacySqliteClient extends SqliteClient {
   _driver() {
@@ -55,6 +56,10 @@ export const createConnection = (config: Knex.Config) => {
     const sqlitePackageName = getSqlitePackageName();
 
     knexConfig.client = clientMap[sqlitePackageName] as Knex.Config['client'];
+  }
+
+  if (knexConfig.client === 'bigquery') {
+    knexConfig.client = BigQueryClient as Knex.Config['client'];
   }
 
   return knex(knexConfig);

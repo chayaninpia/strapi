@@ -3,6 +3,7 @@ import Dialect from './dialect';
 import PostgresClass from './postgresql';
 import MysqlClass from './mysql';
 import SqliteClass from './sqlite';
+import BigQueryClass from './bigquery';
 
 /**
  * Require our dialect-specific code
@@ -15,6 +16,8 @@ const getDialectClass = (client: string): typeof Dialect => {
       return MysqlClass;
     case 'sqlite':
       return SqliteClass;
+    case 'bigquery':
+      return BigQueryClass;
     default:
       throw new Error(`Unknown dialect ${client}`);
   }
@@ -33,6 +36,8 @@ const getDialectName = (client: unknown) => {
     case 'sqlite':
     case 'sqlite-legacy':
       return 'sqlite';
+    case 'bigquery':
+      return 'bigquery';
     default:
       throw new Error(`Unknown dialect ${client}`);
   }

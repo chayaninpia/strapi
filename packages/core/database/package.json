@@ -39,11 +39,13 @@
     "watch": "pack-up watch"
   },
   "dependencies": {
+    "@google-cloud/bigquery": "7.7.1",
     "@strapi/utils": "4.25.0",
     "date-fns": "2.30.0",
     "debug": "4.3.4",
     "fs-extra": "10.0.0",
     "knex": "2.5.0",
+    "knex-bigquery": "2.0.3",
     "lodash": "4.17.21",
     "semver": "7.5.4",
     "umzug": "3.2.1"
