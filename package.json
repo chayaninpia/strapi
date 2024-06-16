@@ -1,5 +1,5 @@
 {
-  "name": "strapi",
+  "name": "lodash-strapi",
   "private": true,
   "bugs": {
     "url": "https://github.com/strapi/strapi/issues"
