@@ -1,6 +1,7 @@
 {
   "name": "lodash-strapi",
   "private": true,
+  "version": "0.1.0",
   "bugs": {
     "url": "https://github.com/strapi/strapi/issues"
   },
